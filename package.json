@@ -1,0 +1,23 @@
+{
+  "name": "node-pug-scss",
+  "version": "1.0.0",
+  "description": "Base Boilerplate to create a simple Nodejs + Pug[Templating] + SCSS",
+  "main": "src/server.js",
+  "author": "William Silveira",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon -e js,pug,scss",
+    "build-css": "node-sass --include-path scss src/scss/main.scss public/assets/css/main.css",
+    "watch-css": "nodemon -e scss -x \"yarn build-css\"",
+    "both": "concurrently \"yarn start\" \"yarn watch-css\""
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-sass": "^4.12.0",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.1",
+    "nodemon": "^1.19.1"
+  }
+}
